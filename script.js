@@ -7,3 +7,30 @@ async function fetchData() {
   document.getElementById("deathNew").innerHTML = record.data[0].deathNew;
 }
 fetchData();
+
+var initiated=false;
+const btn = document.getElementById("btn");
+try{
+  const media = document.getElementsByTagName("video")[0];
+  media.addEventListener("playing", () => {
+    if(initiated){
+      console.log('playing');
+      btn.innerText = "Video Detected";
+    }
+  });
+  console.log('present');
+  
+btn.addEventListener("click", ()=>{
+  if(initiated){
+    btn.innerText = "Start Detection";
+    initiated=false;
+  }else{
+    btn.innerText = "Started";
+    initiated=true;
+  }
+});
+} catch (e){
+  console.log('not present');
+}
+
+
