@@ -4,8 +4,18 @@
   "description": "latest covid data of UK",
   "manifest_version": 3,
   "author": "SwiftScribe",
-  "action": {
-    "default_popup": "index.html",
-    "default_title": ""
-  }
+  "permissions": [
+    "scripting","storage","activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js" 
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+  ],
+  "host_permissions": ["<all_urls>"] 
 }
