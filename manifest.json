@@ -1,7 +1,7 @@
 {
   "name": "Swiftscribe",
   "version": "1.0.0",
-  "description": "latest covid data of UK",
+  "description": "Translation & Transcription",
   "manifest_version": 3,
   "author": "SwiftScribe",
   "permissions": [
@@ -9,6 +9,9 @@
   ],
   "background": {
     "service_worker": "background.js" 
+  },
+  "action": {
+    "default_popup": "index.html"
   },
   "content_scripts": [
     {
